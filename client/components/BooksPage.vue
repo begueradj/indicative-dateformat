@@ -62,7 +62,11 @@ export default {
           'content-type': 'application/json'
         }
       }
-      await this.$axios.$post('/books', data, config)
+      try {
+        await this.$axios.$post('/books', data, config)
+      } catch (e) {
+        console.log(e.response.data[0].message)
+      }
     }
   }
 }
