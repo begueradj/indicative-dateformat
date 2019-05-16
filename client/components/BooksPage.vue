@@ -11,8 +11,27 @@
     >
       <v-flex
         xs12
+        sm5
       >
-        Books page
+        <v-text-field
+          label="Book name"
+        />
+      </v-flex>
+      <v-flex
+        xs12
+        sm5
+      >
+        <v-text-field
+          label="Date time"
+        />
+      </v-flex>
+      <v-flex
+        xs12
+        sm2
+      >
+        <v-btn>
+          Ok
+        </v-btn>
       </v-flex>
     </v-layout>
   </v-container>
