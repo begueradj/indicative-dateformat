@@ -4,7 +4,7 @@ class StoreBook {
   get rules () {
     return {
       name: 'required',
-      effective_datetime: 'required'
+      effective_datetime: 'required|date|dateFormat:YYYY-MM-DD HH:mm:ss'
     }
   }
 

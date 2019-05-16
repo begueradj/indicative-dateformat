@@ -59,7 +59,7 @@ export default {
       data.set('effective_datetime', this.effective_datetime)
       const config = {
         headers: {
-          'content-type': 'application/json'
+          'accept': 'application/json'
         }
       }
       try {
