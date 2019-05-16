@@ -14,6 +14,7 @@
         sm5
       >
         <v-text-field
+          v-model="name"
           label="Book name"
         />
       </v-flex>
@@ -22,14 +23,17 @@
         sm5
       >
         <v-text-field
-          label="Date time"
+          v-model="effective_datetime"
+          label="Effective datetime"
         />
       </v-flex>
       <v-flex
         xs12
         sm2
       >
-        <v-btn>
+        <v-btn
+          @click="submit"
+        >
           Ok
         </v-btn>
       </v-flex>
@@ -39,6 +43,25 @@
 
 <script>
 export default {
-  name: 'BooksPage'
+  name: 'BooksPage',
+  data() {
+    return {
+      name: '',
+      effective_datetime: null
+    }
+  },
+  methods: {
+    async submit() {
+      const data = new FormData()
+      data.set('name', this.name)
+      data.set('effective_datetime', this.effective_datetime)
+      const config = {
+        headers: {
+          'content-type': 'application/json'
+        }
+      }
+      await this.$axios.$post('/books', data, config)
+    }
+  }
 }
 </script>
