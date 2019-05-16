@@ -7,9 +7,13 @@ class BookController {
     return 'Book'
   }
 
-  store({ request, response }) {
+  async store({ request, response }) {
     const data = request.post()
-    console.log(data)
+    const book = new Book()
+    book.name = data.name
+    book.effective_datetime = data.effective_datetime
+    await book.save()
+    
   }
 }
 

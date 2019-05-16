@@ -16,6 +16,7 @@
         <v-text-field
           v-model="name"
           label="Book name"
+          box
         />
       </v-flex>
       <v-flex
@@ -25,6 +26,7 @@
         <v-text-field
           v-model="effective_datetime"
           label="Effective datetime"
+          box
         />
       </v-flex>
       <v-flex
