@@ -19,3 +19,6 @@ const Route = use('Route')
 Route
   .resource('books', 'BookController')
   .apiOnly()
+  .validator(new Map([
+    [['books.store'], ['StoreBook']]
+  ]))
